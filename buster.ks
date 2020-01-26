@@ -13,6 +13,7 @@ local aNet is g.
 local prevQ is SHIP:Q.
 local runmode is 1.
 local offset is ALT:RADAR + 1.
+WAIT UNTIL ALT:RADAR <= 50000.
 until ALT:RADAR <= offset {
     if MISSIONTIME - t > 0.5 {
         set g to BODY:MU / (BODY:RADIUS + ALTITUDE)^2.
