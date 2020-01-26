@@ -7,7 +7,7 @@ LOCK THROTTLE TO 1.
 WAIT UNTIL PERIAPSIS <= 0.
 
 }
-run().
+run.
 
 
 
