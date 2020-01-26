@@ -5,6 +5,7 @@ PRINT "STARTING LANDING".
 STAGE.
 LOCK THROTTLE TO 1. 
 WAIT UNTIL PERIAPSIS <= 0.
+LOCK THROTTLE TO 0.
 local speed is AIRSPEED.
 local t is MISSIONTIME.
 local gSurf is BODY:MU / BODY:RADIUS^2.
@@ -19,6 +20,8 @@ until ALT:RADAR <= offset {
         set g to BODY:MU / (BODY:RADIUS + ALTITUDE)^2.
         set aNet to (aNet + (AIRSPEED - speed) / (MISSIONTIME - t) + thrott * MAXTHRUST / SHIP:MASS)/2.
         set speed to AIRSPEED.
+
+
         set t to MISSIONTIME.
         print "g: " + g + "        " at(0,14).
         print "aNet: " + aNet + "       " at(0,15).
